@@ -1,0 +1,24 @@
+{
+  "name": "prisma-app1",
+  "version": "1.0.0",
+  "description": "* iniciando o projeto\r ```\r npm init -y\r ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "express": "^4.21.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "@types/cors": "^2.8.17",
+    "cors": "^2.8.5",
+    "prisma": "^5.22.0"
+  }
+}
