@@ -4,6 +4,9 @@
   "description": "* iniciando o projeto\r ```\r npm init -y\r ```",
   "main": "index.js",
   "scripts": {
+    "api": "ts-node-dev src/server.ts",
+    "dev": "ts-node-dev src/server.ts",
+    "start": "ts-node-dev src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
