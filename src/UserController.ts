@@ -1,14 +1,24 @@
-import { Request, Response } from "express";
-import { PrismaClient } from "@prisma/client";
+import { Request, Response, NextFunction } from "express";
 
-const prismaClient = new PrismaClient()
+export class UsuarioController {
+  async handle(req: Request, res: Response, next: NextFunction): Promise<void> {
+    try {
+      const { name, email, password } = req.body;
 
-export class UsuarioController{
-    async handle(req: Request, res: Response){
-        const { name, email, password } = req.body
-        const user1 = await prismaClient.user.create({
-            data: { name, email, password }
-        })
-        return res.json(user1)
+      // Validação simples
+      if (!name || !email || !password) {
+        res.status(400).json({ error: "Todos os campos são obrigatórios." });
+        return;
+      }
+
+      // Simulação da lógica de criação de usuário (troque pela lógica real)
+      const newUser = { name, email, password };
+
+      // Retorne a resposta sem retornar a Promise diretamente
+      res.status(201).json(newUser);
+    } catch (error) {
+      // Propague erros para o próximo middleware de erro
+      next(error);
     }
+  }
 }
